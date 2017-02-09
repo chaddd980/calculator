@@ -1,0 +1,88 @@
+$back-color: lightgrey;
+$header-color: red;
+$text-color: yellow;
+$font: 'Anton', sans-serif;
+$font-color: #337AB7;
+$display-back-color: black;
+$display-color: white;
+$font-size: 3.5vw;
+$symbol-back-color: #FFFF99;
+$symbol-color: #ADD8E6;
+
+.app {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.calculator {
+  height: 60%;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.screen-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.display {
+  height: 5.5vw;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: $display-back-color;
+  color: $display-color;
+  font-size: $font-size;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin button-style($width){
+  height: 16.66%;
+  width: $width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $font-color;
+  font-family: $font;
+  font-size: $font-size;
+  background-color: $back-color;
+}
+
+.button {
+  @include button-style(25%)
+}
+
+.button-ac {
+  @include button-style(75%)
+}
+
+.button-0 {
+  @include button-style(50%)
+}
+
+.button:hover {
+  background-color: $back-color * 1.5;
+}
+
+.symbol {
+  background-color: $symbol-back-color;
+  color: $symbol-color;
+  font-size: $font-size;
+}
+
+.symbol:hover {
+  background-color: $symbol-back-color * 1.5;
+}
